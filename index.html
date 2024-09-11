@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque - Loja Bella Fashion</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Inclua Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Loja Bella Fashion</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="vendas.html">Registro de Vendas</a>
+            <a href="estoque.html">Estoque</a>
+            <a href="total.html">Total de Vendas</a>
+            <a href="registro.html">Registrar Produtos</a>
+        </nav>
+    </header>
+    
+    <main>
+        
+        
+        <!-- Gráficos -->
+        <div class="charts-container">
+            <div class="chart-box">
+                <h3>Quantidade de Produtos em Estoque</h3>
+                <canvas id="stockChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <h3>Vendas Realizadas</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Loja Bella Fashion</p>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Configuração dos gráficos
+        const ctxStock = document.getElementById('stockChart').getContext('2d');
+        const stockChart = new Chart(ctxStock, {
+            type: 'bar',
+            data: {
+                labels: ['Produto A', 'Produto B', 'Produto C'], // Substitua pelos nomes reais dos produtos
+                datasets: [{
+                    label: 'Quantidade em Estoque',
+                    data: [10, 15, 8], // Substitua pelos valores reais das quantidades
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctxSales = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctxSales, {
+            type: 'line',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março'], // Substitua pelos meses reais ou períodos de vendas
+                datasets: [{
+                    label: 'Vendas Realizadas',
+                    data: [2000, 2500, 3000], // Substitua pelos valores reais das vendas
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

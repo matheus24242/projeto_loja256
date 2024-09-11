@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total de Vendas - Loja Bella Fashion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Loja Bella Fashion</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="vendas.html">Registro de Vendas</a>
+            <a href="estoque.html">Estoque</a>
+            <a href="total.html">Total de Vendas</a>
+            <a href="registro.html">Registrar Produtos</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <h2>Total de Vendas</h2>
+            
+            <!-- Tabela de Vendas -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço (R$)</th>
+                        <th>Total (R$)</th>
+                    </tr>
+                </thead>
+                <tbody id="salesTableBody">
+                    <!-- As linhas da tabela serão inseridas aqui pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Loja Bella Fashion</p>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Supondo que as vendas são armazenadas em um array de objetos
+        const sales = [
+            { productName: 'Produto A', quantity: 10, price: 29.90 },
+            { productName: 'Produto B', quantity: 5, price: 49.90 },
+            { productName: 'Produto C', quantity: 8, price: 19.90 }
+        ];
+
+        const tableBody = document.getElementById('salesTableBody');
+
+        sales.forEach(sale => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${sale.productName}</td>
+                <td>${sale.quantity}</td>
+                <td>R$ ${sale.price.toFixed(2)}</td>
+                <td>R$ ${(sale.quantity * sale.price).toFixed(2)}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    </script>
+</body>
+</html>

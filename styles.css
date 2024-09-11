@@ -1,0 +1,322 @@
+/* Geral */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Cor de fundo clara e neutra */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #4a90e2; /* Cor de fundo azul */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #003366; /* Borda inferior azul escuro */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem; /* Tamanho do título */
+    font-weight: 700; /* Negrito */
+}
+
+nav {
+    display: flex;
+    margin: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: 500; /* Peso da fonte */
+    transition: color 0.3s, border-bottom 0.3s; /* Transições suaves */
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Linha de destaque ao passar o mouse */
+}
+
+nav a:hover {
+    color: #ffd700; /* Cor dourada ao passar o mouse */
+    border-bottom: 2px solid #ffd700; /* Linha dourada ao passar o mouse */
+}
+
+/* Conteúdo principal */
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* Faz o main ocupar o espaço disponível entre header e footer */
+}
+
+/* Formulário de Registro de Vendas */
+.form-container {
+    background-color: #ffffff; /* Cor de fundo branca */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+    width: 100%;
+    max-width: 600px; /* Largura máxima */
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    font-weight: 600; /* Peso da fonte */
+}
+
+.sales-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #4a90e2; /* Cor de borda ao focar no campo */
+}
+
+.form-group button {
+    background-color: #4a90e2; /* Cor de fundo azul */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #357ABD; /* Cor de fundo ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 0.9rem;
+    position: relative; /* Corrige o posicionamento do rodapé */
+    bottom: 0;
+}
+
+/* Barra de pesquisa */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+#searchBar {
+    width: 100%;
+    max-width: 500px; /* Largura máxima da barra de pesquisa */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    outline: none; /* Remove a borda padrão do foco */
+}
+
+#searchBar:focus {
+    border-color: #4a90e2; /* Cor da borda ao focar */
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Sombra de foco */
+}
+
+/* Contêineres de gráficos */
+.charts-container {
+    display: flex;
+    gap: 30px; /* Espaço entre os gráficos */
+    justify-content: center;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    margin-top: 20px;
+}
+
+.chart-box {
+    width: 500px; /* Largura dos gráficos */
+    height: 400px; /* Altura dos gráficos */
+    background-color: #ffffff; /* Cor de fundo branca */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Título dentro do contêiner do gráfico */
+.chart-box h3 {
+    margin: 10px 0 0;
+    font-size: 1.2rem; /* Tamanho do título */
+    color: #333; /* Cor do texto */
+}
+
+/* Estilos para os contêineres de estoque */
+.container {
+    display: flex;
+    gap: 20px; /* Espaço entre os contêineres */
+    justify-content: center;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.box {
+    width: 300px; /* Largura dos contêineres */
+    height: 200px; /* Altura dos contêineres */
+    background-color: #ffffff; /* Cor de fundo branca */
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Centraliza verticalmente o texto */
+    align-items: center; /* Centraliza horizontalmente o texto */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    color: #333; /* Cor do texto escura */
+    font-size: 1.2rem; /* Tamanho da fonte maior */
+    font-weight: 600; /* Peso da fonte */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+}
+
+.box h3 {
+    margin: 0;
+    font-size: 1.4rem; /* Tamanho do título dentro do contêiner */
+}
+
+.box p {
+    margin: 10px 0 0;
+    font-size: 2rem; /* Tamanho do valor */
+    font-weight: 700; /* Peso do valor */
+}
+
+/* Botões dentro da box */
+.box a {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 8px 15px; /* Diminuído o padding */
+    text-decoration: none;
+    color: #fff;
+    background-color: #2a6aa2; /* Azul original */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.box a:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+
+.box a:active {
+    background-color: #2a6aa2;
+    transform: translateY(0);
+}
+
+/* Botão de visualização de lista */
+.view-list-btn {
+    display: block;
+    margin: 20px auto; /* Adicionado margem para centralizar */
+    padding: 10px 20px; /* Tamanho ajustado */
+    text-decoration: none;
+    color: #fff;
+    background-color: #2a6aa2; /* Azul original */
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    width: fit-content;
+}
+
+.view-list-btn:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+
+.view-list-btn:active {
+    background-color: #2a6aa2;
+    transform: translateY(0);
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #333;
+    color: #fff;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Empilha os contêineres em telas pequenas */
+        gap: 15px; /* Reduz o espaço entre os contêineres */
+    }
+
+    .box {
+        width: 90%; /* Largura maior em telas pequenas */
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+
+    .charts-container {
+        flex-direction: column; /* Empilha os gráficos em telas pequenas */
+        gap: 15px; /* Espaço reduzido entre os gráficos */
+    }
+
+    .chart-box {
+        width: 90%; /* Largura maior em telas pequenas */
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+}
+
+
+
